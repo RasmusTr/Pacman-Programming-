@@ -76,6 +76,8 @@ You can include images here to illustrate the game:
 
 Here is a demonstration of the game in action:
 
+![Image](https://github.com/user-attachments/assets/b9965963-3d4c-4332-827e-a2691997e7c1)
+
 <video width="600" controls>
   <source src="assets/demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
