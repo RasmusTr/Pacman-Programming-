@@ -58,9 +58,8 @@ README.md         # This file
 
 You can include images here to illustrate the game:
 
-```md
 ![Different size 1](https://github.com/RasmusTr/Pacman-Programming-/blob/main/assets/demo_pic_1.png?raw=true)
-```
+
 
 ---
 
