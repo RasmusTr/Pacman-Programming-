@@ -1,4 +1,4 @@
-# University Assignment: Modular Ghost Game
+# University Assignment: Pacman -- Modular Ghost Game
 
 This project was developed as part of a university assignment. The task was to create a game that follows specific **framework guidelines**, which intentionally constrain the game dynamics. The project was completed within one month.
 
@@ -37,8 +37,11 @@ The program is modular and includes the following main components:
 
 ```
 /src
-  /modules        # Contains modules for field generation and enemy logic
-  /assets         # Images, icons, and videos
+  /movement_player_ghost.py   # enemy logic and play controll
+  /create_Labyrinth           # generation of the recursive semi-random labyrinth
+  /assets                     # Images, and Giv for README
+  /bilder                     # Folder contains all the player and ghost images
+  /pos_player_ghosts          # calculation the position of the player and ghost according to its position 
 main.py           # Main program that starts the game
 README.md         # This file
 ```
