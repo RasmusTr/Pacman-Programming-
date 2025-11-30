@@ -62,7 +62,7 @@ You can include images here to illustrate the game:
 ![Different size 1](assets/demo_pic_1.png)
 ![Different size 2](assets/demo_pic_2.png)
 ![Game progress 1](assets/demo_pic_3.png)
-![Game progress 2(assets/demo_pic_4.png)
+![Game progress 2](assets/demo_pic_4.png)
 ```
 
 ---
