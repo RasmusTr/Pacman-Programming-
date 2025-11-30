@@ -75,7 +75,7 @@ The following images illustrate the game interface and progression:
 
 A demonstration of the game can be accessed via the following video:
 
-[Demo Video](assets/demo.mp4)
+[Demo Video](https://github.com/RasmusTr/Pacman-Programming-/blob/main/assets/demo_gif.gif?raw=true)
 
 *Note: Direct video embedding in GitHub README is limited; the link provides access to the local video file.*
 
