@@ -3,42 +3,42 @@
 import random
 from typing import List, Tuple
 
-# Funktion erstellt ein Gitter aus '#' und ' ' 
+# Function creates a grid of '#' and ' ' 
 def create_lattice(
   size: int
 ) -> Tuple[List]:
     """
-    @param size: Seitenlaenge des  Quadrates
+    @param size: Side length of the square
     return:
-    lattice: Gitter aus '#' und ' '
+    lattice: Grid of '#' and ' '
     """
-    # Liste bildet spaeter das Gitter 
+    # List will later form the grid
     lattice =[]
 
-    # Erzeugen Liste mit '#'-Eintraegen  
+    # Create list with '#' entries  
     list_cont = ['#']*size
 
-    # for-Schleife fuer alternierend '#' und ' ' Eintraege
+    # for-loop for alternating '#' and ' ' entries
     list_alter = []
     for i in range(size):
         if i%2 == 0:  
             list_alter += ['#']
-        else:  # falls nicht " " 
+        else:  # otherwise " " 
             list_alter +=[' ']
 
-    # Zusammenbau Listen zu 2D-Liste 
+    # Combine lists into 2D list 
     for i in range(size):
-        # gerade Zahlen liste_cont 
+        # even rows list_cont 
         if i % 2 == 0:
             lattice += [list_cont.copy()]
-        # ungerade Zahlen liste_alter 
+        # odd rows list_alter 
         else:
             lattice += [list_alter.copy()]
 
-    return(lattice)  # Rueckgabe der 2D-Liste 
+    return(lattice)  # Return 2D list 
 
 
-# Erzeuge Zufaelliges Labyrinth
+# Generate random labyrinth
 def Labyrinth_Rekursion(
   row: int,
   column: int,
@@ -46,57 +46,56 @@ def Labyrinth_Rekursion(
   maze: List
 ):
   """
-  @param row: Zeilenidex fuer ersten Mittelpunkt aus Liste
-  @param column: Spaltenindex -||-
-  @param edge_length: Seitenlaenge des naechstkleineren Quadrats
-  @param maze: 2D-Liste (Gitter)
+  @param row: Row index for first center from list
+  @param column: Column index -||-
+  @param edge_length: Side length of next smaller square
+  @param maze: 2D list (grid)
   return:
-  maze: zufaelliges Labyrinth 
+  maze: Random labyrinth 
   """
 
-  # Abbruchbedingung: edge_length kleiner als 2 dann kein Mittelpunkt mehr findbar 
+  # Base case: edge_length smaller than 2, no center can be found 
   if edge_length <2:
     return(maze)
 
   else:
     
-    # Entfernen von Haschtags ("Waende")
-    maze[row][column + random.randrange(1, edge_length, 2)] = " " # Random herausschlagen unten
-    maze[row+random.randrange(1, edge_length, 2)][column] = " "  # -||-  rechts
-    maze[row-random.randrange(1, edge_length, 2)][column] = " "  # -||-  links 
-    maze[row][column -random.randrange(1, edge_length, 2)] = " " # -||-  oben
+    # Remove hashtags ("walls")
+    maze[row][column + random.randrange(1, edge_length, 2)] = " " # Random remove down
+    maze[row+random.randrange(1, edge_length, 2)][column] = " "  # -||-  right
+    maze[row-random.randrange(1, edge_length, 2)][column] = " "  # -||-  left 
+    maze[row][column -random.randrange(1, edge_length, 2)] = " " # -||-  up
     
-    # Halbieren der edge_length fuer Berechnung spaetere Mittelpunktsberechnung 
+    # Halve edge_length for later center calculation 
     half_size = edge_length // 2 
 
-    #Funktion neu aufrufen, kleinere Quadrate: 
-    Labyrinth_Rekursion(row + half_size, column + half_size, half_size, maze) # unten rechts
-    Labyrinth_Rekursion(row + half_size, column - half_size, half_size, maze) # unten links
-    Labyrinth_Rekursion(row - half_size, column + half_size, half_size, maze) # oben rechts
-    Labyrinth_Rekursion(row - half_size, column - half_size, half_size, maze) # oben links
+    # Recursively call function for smaller squares: 
+    Labyrinth_Rekursion(row + half_size, column + half_size, half_size, maze) # bottom right
+    Labyrinth_Rekursion(row + half_size, column - half_size, half_size, maze) # bottom left
+    Labyrinth_Rekursion(row - half_size, column + half_size, half_size, maze) # top right
+    Labyrinth_Rekursion(row - half_size, column - half_size, half_size, maze) # top left
 
-# Testfunktion
+# Test function
 def test():
 
-  # Eingabe durch Benutzer 
+  # Input from user 
   eingabe = input(
-  "Geben Sie eine Zahl n ein, mit welcher ein quadratisches \n Labyrinth der Groesse 2**n +1 erzeugt wird: "
+  "Enter a number n to generate a square \n labyrinth of size 2**n +1: "
   )
   
-  size = 2 **int(eingabe) + 1 # Berechne Quadratgroesse 
+  size = 2 **int(eingabe) + 1 # Calculate square size 
   labyrinth = create_lattice(size) 
   
-  # Berechne ersten Mittelpunkt
-  row = size // 2  # Zeilenindex der Liste fuer erst Mittelpunkt 
-  column = size// 2  # Spaltenindex der Liste fuer ersten Mittelpunkt
+  # Calculate first center
+  row = size // 2  # Row index of list for first center 
+  column = size// 2  # Column index of list for first center
   
-  # Funktionsaufruf mit Seiteneffekt 
+  # Function call with side effect 
   Labyrinth_Rekursion(row, column, edge_length = size // 2, maze = labyrinth)
 
-  #Rueckgabewert an die Mainfunktion
+  # Return value to main function
   return(labyrinth)  
 
-#------ Main-Funktion -----------------
+#------ Main function -----------------
 if __name__ == "__main__":
     test()
-
