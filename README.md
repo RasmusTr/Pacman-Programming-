@@ -59,11 +59,15 @@ README.md         # This file
 You can include images here to illustrate the game:
 
 <p float="left">
-  <img src="assets/demo_pic_1.png" width="200" />
-  <img src="assets/demo_pic_2.png" width="200" />
-  <img src="assets/demo_pic_3.png" width="200" />
-  <img src="assets/demo_pic_4.png" width="200" />
+  <img src="assets/demo_pic_1.png" width="400" />
+  <img src="assets/demo_pic_2.png" width="400" />
 </p>
+
+<p float="left">
+  <img src="assets/demo_pic_3.png" width="400" />
+  <img src="assets/demo_pic_4.png" width="400" />
+</p>
+ 
 
 
 ---
