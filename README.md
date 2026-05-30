@@ -1,4 +1,4 @@
-# University Assignment: Pacman – Modular Ghost Game
+# Pacman – Modular Ghost Game
 
 This project was developed as part of a university assignment. The objective was to implement a game following a predefined **framework specification**, which imposes certain constraints on the game mechanics. The project was completed within a one-month period.
 
@@ -76,8 +76,6 @@ The following images illustrate the game interface and progression:
 A demonstration of the game can be accessed via the following video:
 
 ![Image](https://github.com/user-attachments/assets/1796afbb-72d2-4133-9eb3-a861996a579e)
-
-*Note: Direct video embedding in GitHub README is limited; the link provides access to the local video file.*
 
 ---
 
